@@ -1,0 +1,8 @@
+Command_Aliases:
+  - 'sprawdz'
+
+Prefix: "&7[&3Sprawdzanie&7]"
+Locale: "en"
+
+# Internal version number. Do not change!
+Version: 1

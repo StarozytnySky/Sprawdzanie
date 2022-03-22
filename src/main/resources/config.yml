@@ -1,0 +1,19 @@
+Settings:
+  Spawn:
+    yaw: 90
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    world: world
+  Sprawdzarka:
+    yaw: 90
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    world: world
+
+  Commands:
+    logout: "tempipban {player} 48h Wylogowano podczas sprawdzania"
+      
+  Allowed_Commands:
+    - "tpa"

@@ -1,0 +1,33 @@
+Information:
+  INFORM_STAFF_ADD:
+    - "=============================="
+    - '&6{target} &2jest teraz sprawdzany przez &c{staff}'
+    - "=============================="
+  INFORM_STAFF_REMOVE:
+    - "=============================="
+    - '&6{target} &2jest czysty. Sprawdzany przez &c{staff}'
+    - "=============================="
+  INFORM_PLAYER_ADD:
+    - "=============================="
+    - "&c&lJesteś sprawdzany/a przez {staff}"
+    - ""
+    - "&cWykonuj polecenia administratora i nie wylogowywuj się"
+    - "=============================="
+  INFORM_PLAYER_REMOVE:
+    - "=============================="
+    - "&c&lJesteś czysty"
+    - "=============================="
+  INFORM_PLAYER_LOGOUT:
+    - "=============================="
+    - ""
+    - "=============================="
+
+
+Error:
+  PLAYER_OFFLINE: "&6{player} &cjest offline"
+  MISSING_PLAYER_NAME: "&cPodaj nick gracza"
+  PLAYER_IS_NOW_GEING_CHECKED: "&6{player} &cjest juz sprawdzany/a"
+  NO_PERMISSION: "&cNie posiadasz uprawnien do tej komendy"
+  COMMAND_BLOCKED: "Nie mozesz uzyc tej komendy, poniewaz jestes teraz sprawdzany/a"
+# Internal version number. Do not change!
+Version: 1
