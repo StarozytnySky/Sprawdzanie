@@ -28,6 +28,7 @@ public class Add extends SimpleSubCommand {
 
 	@Override
 	public void onCommand() {
+		checkConsole();
 
 		List<String> addedPlayers = Sprawdzanie.getInstance().getTemporaryPlayers();
 

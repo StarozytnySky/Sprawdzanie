@@ -34,6 +34,7 @@ public class Messages extends SimpleLocalization {
 	public static class Error {
 		public static String PLAYER_OFFLINE;
 		public static String PLAYER_IS_NOW_GEING_CHECKED;
+		public static String PLAYER_IS_NO_CHECKED;
 		public static String NO_PERMISSION;
 		public static String COMMAND_BLOCKED;
 		public static String MISSING_PLAYER_NAME;
@@ -43,6 +44,7 @@ public class Messages extends SimpleLocalization {
 			pathPrefix("Error");
 			PLAYER_OFFLINE = getString("PLAYER_OFFLINE");
 			PLAYER_IS_NOW_GEING_CHECKED = getString("PLAYER_IS_NOW_GEING_CHECKED");
+			PLAYER_IS_NO_CHECKED = getString("PLAYER_IS_NO_CHECKED");
 			NO_PERMISSION = getString("NO_PERMISSION");
 			COMMAND_BLOCKED = getString("COMMAND_BLOCKED");
 			MISSING_PLAYER_NAME = getString("MISSING_PLAYER_NAME");

@@ -1,32 +1,32 @@
 Information:
   INFORM_STAFF_ADD:
-    - "=============================="
+    - "==============="
     - '&6{target} &2jest teraz sprawdzany przez &c{staff}'
-    - "=============================="
+    - "==============="
   INFORM_STAFF_REMOVE:
-    - "=============================="
+    - "==============="
     - '&6{target} &2jest czysty. Sprawdzany przez &c{staff}'
-    - "=============================="
+    - "==============="
   INFORM_PLAYER_ADD:
-    - "=============================="
+    - "==============="
     - "&c&lJesteś sprawdzany/a przez {staff}"
     - ""
-    - "&cWykonuj polecenia administratora i nie wylogowywuj się"
-    - "=============================="
+    - "&cWykonuj polecenia administratora i nie wylogowywuj sie"
+    - "==============="
   INFORM_PLAYER_REMOVE:
-    - "=============================="
-    - "&c&lJesteś czysty"
-    - "=============================="
+    - "==============="
+    - "&c&lJestes czysty"
+    - "==============="
   INFORM_PLAYER_LOGOUT:
-    - "=============================="
-    - ""
-    - "=============================="
-
+    - "==============="
+    - "&6{player} &cwylogowal sie podczas sprawdzania"
+    - "==============="
 
 Error:
   PLAYER_OFFLINE: "&6{player} &cjest offline"
   MISSING_PLAYER_NAME: "&cPodaj nick gracza"
   PLAYER_IS_NOW_GEING_CHECKED: "&6{player} &cjest juz sprawdzany/a"
+  PLAYER_IS_NO_CHECKED: "&6{player} &cnie jest sprawdzany/a"
   NO_PERMISSION: "&cNie posiadasz uprawnien do tej komendy"
   COMMAND_BLOCKED: "Nie mozesz uzyc tej komendy, poniewaz jestes teraz sprawdzany/a"
 # Internal version number. Do not change!

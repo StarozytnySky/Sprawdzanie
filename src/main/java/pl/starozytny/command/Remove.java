@@ -2,8 +2,11 @@ package pl.starozytny.command;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.mineacademy.fo.Common;
+import org.mineacademy.fo.PlayerUtil;
 import org.mineacademy.fo.command.SimpleSubCommand;
+import org.mineacademy.fo.remain.Remain;
 import pl.starozytny.Sprawdzanie;
 import pl.starozytny.file.ConfigFile;
 import pl.starozytny.file.Messages;
@@ -29,6 +32,11 @@ public class Remove extends SimpleSubCommand {
 
 		List<String> addedPlayers = Sprawdzanie.getInstance().getTemporaryPlayers();
 
+		if (args.length == 0) {
+			Common.tell(sender, Messages.Error.MISSING_PLAYER_NAME);
+			return;
+		}
+
 		String targetPlayer = args[0];
 
 		INFORM_STAFF = Messages.Information.INFORM_STAFF_REMOVE.stream().filter(Objects::nonNull).map(rawList -> rawList.
@@ -40,14 +48,17 @@ public class Remove extends SimpleSubCommand {
 		if (Bukkit.getPlayer(targetPlayer) != null) {
 			if (addedPlayers.contains(targetPlayer)) {
 				addedPlayers.remove(targetPlayer);
-				Common.broadcastWithPerm("sprawdzanie.admin", String.valueOf(INFORM_STAFF), true);
+				for (final Player online : Remain.getOnlinePlayers()) {
+					if (PlayerUtil.hasPerm(online, "sprawdzanie.admin"))
+						Common.tell(online, INFORM_STAFF);
+				}
 				Location location = new Location(
 						Bukkit.getWorld(ConfigFile.getInstance().SPRAWDZARKA_WORLD), ConfigFile.getInstance().SPRAWDZARKA_X, ConfigFile.getInstance().SPRAWDZARKA_Y,
 						ConfigFile.getInstance().SPRAWDZARKA_X, ConfigFile.getInstance().SPRAWDZARKA_YAW, 0);
 				findPlayer(targetPlayer).teleport(location);
 				Common.tell(findPlayer(targetPlayer), INFORM_PLAYER);
 			} else
-				Common.tell(sender, Messages.Error.PLAYER_IS_NOW_GEING_CHECKED.replace("{player}", targetPlayer));
+				Common.tell(sender, Messages.Error.PLAYER_IS_NO_CHECKED.replace("{player}", targetPlayer));
 		} else
 			Common.tell(sender, Messages.Error.PLAYER_OFFLINE.replace("{player}", targetPlayer));
 	}
