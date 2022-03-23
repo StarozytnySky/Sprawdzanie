@@ -30,7 +30,7 @@ public class QuitEvent implements Listener {
 			if (Bukkit.dispatchCommand(Bukkit.getConsoleSender(), ConfigFile.getInstance().COMMAND_LOGOUT.replace("{player}", event.getPlayer().getName()))) {
 				Common.tell(event.getPlayer(), Messages.Error.COMMAND_BLOCKED);
 				for (final Player online : Remain.getOnlinePlayers()) {
-					if (PlayerUtil.hasPerm(online, "sprawdzanie.admin")) {
+					if (PlayerUtil.hasPerm(online, "sprawdz.admin")) {
 						INFORM_LOGOUT = Messages.Information.INFORM_PLAYER_LOGOUT.stream().filter(Objects::nonNull).map(rawList -> rawList.
 								replace("{target}", event.getPlayer().getName())).collect(Collectors.toList());
 						Common.tell(online, INFORM_LOGOUT);

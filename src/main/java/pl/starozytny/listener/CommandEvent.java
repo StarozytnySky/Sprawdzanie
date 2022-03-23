@@ -21,7 +21,7 @@ public class CommandEvent implements Listener {
 		String[] message = event.getMessage().split(" ");
 
 		if (addedPlayers.contains(event.getPlayer().getName())) {
-			if (!event.getPlayer().hasPermission("sprawdzanie.bypass")) {
+			if (!event.getPlayer().hasPermission("sprawdz.bypass")) {
 				if (!ConfigFile.getInstance().ALLOWED_COMMANDS.contains(message[0].replaceFirst("/", ""))) {
 					event.setCancelled(true);
 					Common.tell(event.getPlayer(), Messages.Error.COMMAND_BLOCKED);

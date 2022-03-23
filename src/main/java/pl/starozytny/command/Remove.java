@@ -49,7 +49,7 @@ public class Remove extends SimpleSubCommand {
 			if (addedPlayers.contains(targetPlayer)) {
 				addedPlayers.remove(targetPlayer);
 				for (final Player online : Remain.getOnlinePlayers()) {
-					if (PlayerUtil.hasPerm(online, "sprawdzanie.admin"))
+					if (PlayerUtil.hasPerm(online, "sprawdz.admin"))
 						Common.tell(online, INFORM_STAFF);
 				}
 				Location location = new Location(
