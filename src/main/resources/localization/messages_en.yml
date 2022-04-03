@@ -3,7 +3,7 @@ Information:
     - "==============="
     - '&6{target} &2jest teraz sprawdzany przez &c{staff}'
     - "==============="
-  INFORM_STAFF_REMOVE:
+  INFORM_REMOVE:
     - "==============="
     - '&6{target} &2jest czysty. Sprawdzany przez &c{staff}'
     - "==============="
@@ -13,14 +13,19 @@ Information:
     - ""
     - "&cWykonuj polecenia administratora i nie wylogowywuj sie"
     - "==============="
-  INFORM_PLAYER_REMOVE:
-    - "==============="
-    - "&c&lJestes czysty"
-    - "==============="
   INFORM_PLAYER_LOGOUT:
     - "==============="
     - "&6{player} &cwylogowal sie podczas sprawdzania"
     - "==============="
+  INFORM_SERVER_PRZYZNAJ:
+    - "==============="
+    - "&6{player} &cprzyznaje sie do posiadania cheatow"
+    - "==============="
+  INFORM_SERVER_BAN:
+    - "==============="
+    - "&6{player} &cdostaje bana za posiadanie cheatow"
+    - "==============="
+
 
 Error:
   PLAYER_OFFLINE: "&6{player} &cjest offline"

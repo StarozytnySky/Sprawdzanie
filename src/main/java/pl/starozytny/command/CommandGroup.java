@@ -9,6 +9,7 @@ public class CommandGroup extends SimpleCommandGroup {
 		registerSubcommand(new Add());
 		registerSubcommand(new Remove());
 		registerSubcommand(new Reload());
+		registerSubcommand(new Ban());
 
 	}
 

@@ -14,19 +14,21 @@ public class Messages extends SimpleLocalization {
 
 	public static class Information {
 		public static List<String> INFORM_STAFF_ADD;
-		public static List<String> INFORM_STAFF_REMOVE;
+		public static List<String> INFORM_REMOVE;
 		public static List<String> INFORM_PLAYER_ADD;
-		public static List<String> INFORM_PLAYER_REMOVE;
 		public static List<String> INFORM_PLAYER_LOGOUT;
+		public static List<String> INFORM_SERVER_PRZYZNAJ;
+		public static List<String> INFORM_SERVER_BAN;
 
 		private static void init() {
 
 			pathPrefix("Information");
 			INFORM_STAFF_ADD = getStringList("INFORM_STAFF_ADD");
-			INFORM_STAFF_REMOVE = getStringList("INFORM_STAFF_REMOVE");
+			INFORM_REMOVE = getStringList("INFORM_REMOVE");
 			INFORM_PLAYER_ADD = getStringList("INFORM_PLAYER_ADD");
-			INFORM_PLAYER_REMOVE = getStringList("INFORM_PLAYER_REMOVE");
 			INFORM_PLAYER_LOGOUT = getStringList("INFORM_PLAYER_LOGOUT");
+			INFORM_SERVER_PRZYZNAJ = getStringList("INFORM_SERVER_PRZYZNAJ");
+			INFORM_SERVER_BAN = getStringList("INFORM_SERVER_BAN");
 
 		}
 	}

@@ -30,6 +30,8 @@ public class Add extends SimpleSubCommand {
 	public void onCommand() {
 		checkConsole();
 
+		Player player = (Player) sender;
+
 		List<String> addedPlayers = Sprawdzanie.getInstance().getTemporaryPlayers();
 
 		if (args.length == 0) {
@@ -57,6 +59,7 @@ public class Add extends SimpleSubCommand {
 						Bukkit.getWorld(ConfigFile.getInstance().SPAWN_WORLD), ConfigFile.getInstance().SPAWN_X, ConfigFile.getInstance().SPAWN_Y,
 						ConfigFile.getInstance().SPAWN_Z, ConfigFile.getInstance().SPAWN_YAW, 0);
 				findPlayer(targetPlayer).teleport(location);
+				player.teleport(location);
 				Common.tell(findPlayer(targetPlayer), INFORM_PLAYER);
 			} else
 				Common.tell(sender, Messages.Error.PLAYER_IS_NOW_GEING_CHECKED.replace("{player}", targetPlayer));

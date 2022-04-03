@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.settings.YamlStaticConfig;
 import pl.starozytny.command.CommandGroup;
+import pl.starozytny.command.Przyznaj;
 import pl.starozytny.file.ConfigFile;
 import pl.starozytny.file.Messages;
 import pl.starozytny.file.Settings;
@@ -57,6 +58,7 @@ public class Sprawdzanie extends SimplePlugin {
 	protected void onPluginStart() {
 		instance = this;
 
+		registerCommand(new Przyznaj());
 		ConfigFile.getInstance();
 
 		registerEvents(new CommandEvent());

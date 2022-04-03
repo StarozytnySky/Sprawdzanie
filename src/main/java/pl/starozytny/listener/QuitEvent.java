@@ -32,7 +32,7 @@ public class QuitEvent implements Listener {
 				for (final Player online : Remain.getOnlinePlayers()) {
 					if (PlayerUtil.hasPerm(online, "sprawdz.admin")) {
 						INFORM_LOGOUT = Messages.Information.INFORM_PLAYER_LOGOUT.stream().filter(Objects::nonNull).map(rawList -> rawList.
-								replace("{target}", event.getPlayer().getName())).collect(Collectors.toList());
+								replace("{player}", event.getPlayer().getName())).collect(Collectors.toList());
 						Common.tell(online, INFORM_LOGOUT);
 					}
 				}

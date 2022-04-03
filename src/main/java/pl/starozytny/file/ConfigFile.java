@@ -32,6 +32,8 @@ public class ConfigFile extends YamlConfig {
 	public String SPRAWDZARKA_WORLD;
 
 	public String COMMAND_LOGOUT;
+	public String COMMAND_BAN;
+	public String COMMAND_PRZYZNANIE;
 
 	public List<String> ALLOWED_COMMANDS;
 
@@ -56,18 +58,20 @@ public class ConfigFile extends YamlConfig {
 	protected void onLoadFinish() {
 
 		SPAWN_YAW = getInteger("Settings.Spawn.yaw");
-		SPAWN_X = getDouble("Settings.Spawn.z");
+		SPAWN_X = getDouble("Settings.Spawn.x");
 		SPAWN_Y = getDouble("Settings.Spawn.y");
 		SPAWN_Z = getDouble("Settings.Spawn.z");
 		SPAWN_WORLD = getString("Settings.Spawn.world");
 
 		SPRAWDZARKA_YAW = getInteger("Settings.Sprawdzarka.yaw");
-		SPRAWDZARKA_X = getDouble("Settings.Sprawdzarka.z");
+		SPRAWDZARKA_X = getDouble("Settings.Sprawdzarka.x");
 		SPRAWDZARKA_Y = getDouble("Settings.Sprawdzarka.y");
 		SPRAWDZARKA_Z = getDouble("Settings.Sprawdzarka.z");
 		SPRAWDZARKA_WORLD = getString("Settings.Sprawdzarka.world");
 
 		COMMAND_LOGOUT = getString("Settings.Command.logout");
+		COMMAND_BAN = getString("Settings.Command.ban");
+		COMMAND_PRZYZNANIE = getString("Settings.Command.przyznanie");
 
 		ALLOWED_COMMANDS = getStringList("Settings.Allowed_Commands");
 

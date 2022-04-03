@@ -14,6 +14,8 @@ Settings:
 
   Command:
     logout: "tempipban {player} 48h Wylogowano podczas sprawdzania"
+    ban: "tempban {player} 7d Posiadanie cheatow"
+    przyznanie: "tempban {player} 3d Przyznanie do cheatow"
 
   Allowed_Commands:
     - "tpa"

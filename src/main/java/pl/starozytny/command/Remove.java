@@ -1,5 +1,6 @@
 package pl.starozytny.command;
 
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -17,8 +18,12 @@ import java.util.stream.Collectors;
 
 public class Remove extends SimpleSubCommand {
 
-	List<String> INFORM_STAFF;
+	List<String> INFORM_REMOVE;
 	List<String> INFORM_PLAYER;
+
+	@Getter
+	public final static Remove instance = new Remove();
+
 
 	public Remove() {
 		super("remove");
@@ -27,8 +32,16 @@ public class Remove extends SimpleSubCommand {
 	}
 
 
+	public Object ttt() {
+		String targetPlayer = args[0];
+		return null;
+	}
+
 	@Override
 	public void onCommand() {
+
+		Player player = (Player) sender;
+
 
 		List<String> addedPlayers = Sprawdzanie.getInstance().getTemporaryPlayers();
 
@@ -39,24 +52,24 @@ public class Remove extends SimpleSubCommand {
 
 		String targetPlayer = args[0];
 
-		INFORM_STAFF = Messages.Information.INFORM_STAFF_REMOVE.stream().filter(Objects::nonNull).map(rawList -> rawList.
+		INFORM_REMOVE = Messages.Information.INFORM_REMOVE.stream().filter(Objects::nonNull).map(rawList -> rawList.
 				replace("{target}", targetPlayer).
 				replace("{staff}", sender.getName())).collect(Collectors.toList());
 
-		INFORM_PLAYER = Messages.Information.INFORM_PLAYER_REMOVE.stream().filter(Objects::nonNull).collect(Collectors.toList());
+		INFORM_PLAYER = Messages.Information.INFORM_REMOVE.stream().filter(Objects::nonNull).collect(Collectors.toList());
 
 		if (Bukkit.getPlayer(targetPlayer) != null) {
 			if (addedPlayers.contains(targetPlayer)) {
 				addedPlayers.remove(targetPlayer);
 				for (final Player online : Remain.getOnlinePlayers()) {
 					if (PlayerUtil.hasPerm(online, "sprawdz.admin"))
-						Common.tell(online, INFORM_STAFF);
+						Common.tell(online, INFORM_REMOVE);
 				}
 				Location location = new Location(
 						Bukkit.getWorld(ConfigFile.getInstance().SPRAWDZARKA_WORLD), ConfigFile.getInstance().SPRAWDZARKA_X, ConfigFile.getInstance().SPRAWDZARKA_Y,
-						ConfigFile.getInstance().SPRAWDZARKA_X, ConfigFile.getInstance().SPRAWDZARKA_YAW, 0);
+						ConfigFile.getInstance().SPRAWDZARKA_Z, ConfigFile.getInstance().SPRAWDZARKA_YAW, 0);
 				findPlayer(targetPlayer).teleport(location);
-				Common.tell(findPlayer(targetPlayer), INFORM_PLAYER);
+				player.teleport(location);
 			} else
 				Common.tell(sender, Messages.Error.PLAYER_IS_NO_CHECKED.replace("{player}", targetPlayer));
 		} else
