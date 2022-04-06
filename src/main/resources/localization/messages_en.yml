@@ -12,6 +12,8 @@ Information:
     - "&c&lJesteś sprawdzany/a przez {staff}"
     - ""
     - "&cWykonuj polecenia administratora i nie wylogowywuj sie"
+    - ""
+    - "&cJezeli przyznajesz sie do cheatow wpisz &6/przyznajesie"
     - "==============="
   INFORM_PLAYER_LOGOUT:
     - "==============="
